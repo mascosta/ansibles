@@ -1,0 +1,26 @@
+---
+- name: Provisionando ambiente
+  hosts: xenserver
+  tasks:
+  - name: Incluindo variáveis
+    include_vars: vars/vars.yaml
+  - name: Criando vm a partir do template
+    community.general.xenserver_guest:
+      hostname: 10.0.0.10
+      username: "{{ user }}"
+      password: "{{ pass }}"
+      validate_certs: no
+      name: "{{ item.vmname }}"
+      state: poweredon
+      template: ol8_default
+      networks: 
+      - name: vlanvms
+      wait_for_ip_address: no
+    loop:
+      - { vmname: 'k8sm1' }
+      - { vmname: 'k8sm2' }
+      - { vmname: 'k8sm3' }
+      - { vmname: 'k8sw1' }
+      - { vmname: 'k8sw2' }
+    register: deploy
+...

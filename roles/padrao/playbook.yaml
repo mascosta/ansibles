@@ -1,0 +1,27 @@
+---
+- name: Atualização dos pacotes padrão
+  hosts: all
+  tasks:
+    - name: Instalação do repositório EPEL
+      yum:
+        name: 
+        - epel-release
+        state: latest
+
+    - name: Atualização do sistema
+      yum:
+        name: '*'
+        state: latest
+    - name: Adicionando pacotes padrão
+      yum:
+        name:
+        - bash-completion
+        - vim
+        - nmap
+        - tcpdump
+        - git
+        - wget
+        - mtr
+        - net-tools
+        state: latest
+...

@@ -1,0 +1,12 @@
+---
+- name: Copia de chave privada
+  hosts: local
+  tasks:
+  - name: executando o comando
+    shell:
+      cmd: ssh-copy-id -i /opt/ansible/.ssh/chave.pub root@"{{ item.ip }}" -o StrictHostKeyChecking=no
+    loop:
+      - { ip: '10.255.0.101' }
+      - { ip: '10.255.0.102' }
+      - { ip: '10.255.0.103' }
+...
