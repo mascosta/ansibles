@@ -14,7 +14,7 @@
 ## Observação2:  O ambiente foi montado no diretório /opt/ansible
 
 
-## 0 - Pré-configuração padrão do ambiente (adição das chaves, porque ninguem aqui quer usar o ```--ask-pass```)
+## 0 - Pré-configuração padrão do ambiente (*adição das chaves, porque ninguem aqui quer usar o ```--ask-pass```* :wink:)
 
 Antes de mais tudo, como o objetivo é automatizar o máximo possível, foi criada uma role justamente para adição de chaves nos hosts que serão gerenciados:
 
@@ -118,7 +118,7 @@ ansible-playbook -i $(pwd)/roles/padrao/inventario $(pwd)/roles/padrao/playbook.
 Nessa parte, apos algumas horas de busca na internet e lida em fóruns, foram levantados os seguintes requisitos:
 
 - É recomendável que se configure uma máquina toda ok, para ser criado um template a partir desta *pode ser rodada a playbook padrão acima que já é um grande adianto hehehe :grin:*.
-- Depois desta criada, cria-se um snapshot.  *como eu tinha configurado ela antes com endereço de rede, antes de gerar o snapshot eu "desconfigurei", pra configurar depois das cópias ¯\_(ツ)_/¯*
+- Depois desta criada, cria-se um snapshot.  *como eu tinha configurado ela antes com endereço de rede, antes de gerar o snapshot eu "desconfigurei", pra configurar depois das cópias *¯\_(ツ)_/¯
 - Não foi possível adição da configuração de rede através da playbook, necessitando melhoria. *Deve dar certo mesmo... Só não rolou no lab. :disappointed_relieved:*
 - Para o provisionamento horizontal de nós a um cluster, acaba se tornando uma opção válida, apesar da questão do endereçamento. *Ou você pode ir na mão e subir de um por um também... :grimacing:* 
 - Necessária a versão do ``` ansible >= 2.10 ```, por padrão algumas distribuições ainda trazem a 2.9 como padrão e a *collection* ``` community.general ```, para o módulo ``` community.general.xenserver_guest ``` usado na playbook. *E vai ficar quebrando a cabeça achando que quem escreveu esse guia ta viajando...:sleepy:*
