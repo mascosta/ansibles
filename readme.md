@@ -14,7 +14,7 @@
 ## Observação2:  O ambiente foi montado no diretório /opt/ansible
 
 
-## 0 - Pré-configuração padrão do ambiente (*adição das chaves, porque ninguem aqui quer usar o ```--ask-pass```* :wink:)
+## 0 - Pré-configuração padrão do ambiente (*adição das chaves, porque ninguém aqui quer usar o ```--ask-pass```* :wink:)
 
 Antes de mais tudo, como o objetivo é automatizar o máximo possível, foi criada uma role justamente para adição de chaves nos hosts que serão gerenciados:
 
@@ -51,7 +51,7 @@ Antes de mais tudo, como o objetivo é automatizar o máximo possível, foi cria
 ansible-playbook -i $(pwd)/roles/addkey/inventario $(pwd)/roles/addkey/playbook.yaml
 ```
 
-## 1 - Configuração padrão do ambiente (Agora começa a parte legal! :D)
+## 1 - Configuração padrão do ambiente (Agora começa a parte legal! :smirk:)
 
 Na role padrão foi feita uma configuração básica, sem o uso do when (pelo fato de as máquinas serem idênticas), e para sua execução, o bom e velho ```ansible-playbook```, claro, ajustando o arquivo de inventário à sua realidade.
 
@@ -64,7 +64,7 @@ Na role padrão foi feita uma configuração básica, sem o uso do when (pelo fa
 
 ```
 
-[+ **Breve explicação nos parâmetros acima** +]
+**Breve explicação nos parâmetros acima**
 
 - ``` [teste] ```: Nome do grupo de hosts (targets) que será(ão) chamado(s) na playbook.
 - ``` 10.255.0.10 ```: Muito bem, *#AcertôMizeravi*, é o endereço de rede, IPv4, do(s) target(s) que serão chamados na playbook.
@@ -113,12 +113,12 @@ ansible-playbook -i $(pwd)/roles/padrao/inventario $(pwd)/roles/padrao/playbook.
 
 ```
 
-## 2 - Provisionando máquinas virtuais no XCP-NG (Agora é onde o filho chora e a mãe não vê... D:)
+## 2 - Provisionando máquinas virtuais no XCP-NG (Agora é onde o filho chora e a mãe não vê... :scream:)
 
 Nessa parte, apos algumas horas de busca na internet e lida em fóruns, foram levantados os seguintes requisitos:
 
 - É recomendável que se configure uma máquina toda ok, para ser criado um template a partir desta *pode ser rodada a playbook padrão acima que já é um grande adianto hehehe :grin:*.
-- Depois desta criada, cria-se um snapshot.  *como eu tinha configurado ela antes com endereço de rede, antes de gerar o snapshot eu "desconfigurei", pra configurar depois das cópias *¯\_(ツ)_/¯
+- Depois desta criada, cria-se um snapshot. *como a máquina foi configurada antes com endereço de rede, antes de gerar o snapshot eu "desconfigurei", pra configurar depois das cópias *¯\\_(ツ)_/¯
 - Não foi possível adição da configuração de rede através da playbook, necessitando melhoria. *Deve dar certo mesmo... Só não rolou no lab. :disappointed_relieved:*
 - Para o provisionamento horizontal de nós a um cluster, acaba se tornando uma opção válida, apesar da questão do endereçamento. *Ou você pode ir na mão e subir de um por um também... :grimacing:* 
 - Necessária a versão do ``` ansible >= 2.10 ```, por padrão algumas distribuições ainda trazem a 2.9 como padrão e a *collection* ``` community.general ```, para o módulo ``` community.general.xenserver_guest ``` usado na playbook. *E vai ficar quebrando a cabeça achando que quem escreveu esse guia ta viajando...:sleepy:*
@@ -190,7 +190,7 @@ ansible-galaxy collection install community.general
 ...
 
 ```
-[+ **Breve explicação nos parâmetros acima** +]
+**Breve explicação nos parâmetros acima**
 
 - ``` hostname: 10.0.0.10 ```: Endereço de IP ou FQDN do servidor onde será provisionado o ambiente.
 - ``` username: "{{ user }}" ``` e ``` password: "{{ pass }}" ```: Valores existentes no arquivo de variaveis, apontado em ```include_vars: vars/vars.yaml```.
