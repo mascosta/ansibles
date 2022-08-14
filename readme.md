@@ -4,17 +4,21 @@
 
 - Apesar de não ser algo complexo ou avançado, segue abaixo alguns resultados de estudos com a ferramenta, desde a cópia simples da chave ssh pública para um destino "x" até o provisionamento de máquinas virtuais em um ambiente XEN like (XCP-NG)
 
-## Observação1: Alguns arquivos/diretórios de dados sensíveis foram removidos via gitignore, contudo, é só adaptar a realidade do ambiente que for aplicar.
+### Observação1: Alguns arquivos/diretórios de dados sensíveis foram removidos via gitignore, contudo, é só adaptar a realidade do ambiente que for aplicar.
+
+![mib](https://media0.giphy.com/media/R7m04yMaGWVeE/giphy.gif)
 
 **Alguns exemplos:**
 
 - .ssh/
 - roles/xen/vars/vars.yaml
 
-## Observação2:  O ambiente foi montado no diretório /opt/ansible
+### Observação2:  O ambiente foi montado no diretório /opt/ansible
 
 
 ## 0 - Pré-configuração padrão do ambiente (*adição das chaves, porque ninguém aqui quer usar o ```--ask-pass```* :wink:)
+
+![rage](https://c.tenor.com/VkRCJzYGdQMAAAAC/pc-man.gif)
 
 Antes de mais tudo, como o objetivo é automatizar o máximo possível, foi criada uma role justamente para adição de chaves nos hosts que serão gerenciados:
 
@@ -115,6 +119,8 @@ ansible-playbook -i $(pwd)/roles/padrao/inventario $(pwd)/roles/padrao/playbook.
 
 ## 2 - Provisionando máquinas virtuais no XCP-NG (Agora é onde o filho chora e a mãe não vê... :scream:)
 
+![nervous](https://c.tenor.com/jpsBd7ZEMmEAAAAd/nervous-scared.gif)
+
 Nessa parte, apos algumas horas de busca na internet e lida em fóruns, foram levantados os seguintes requisitos:
 
 - É recomendável que se configure uma máquina toda ok, para ser criado um template a partir desta *pode ser rodada a playbook padrão acima que já é um grande adianto hehehe :grin:*.
@@ -207,3 +213,8 @@ ansible-galaxy collection install community.general
 ansible-playbook -i $(pwd)/roles/padrao/inventario $(pwd)/roles/padrao/playbook.yaml
 
 ```
+
+
+### Bom, por esse guia é isso, espero que ajude alguem, de alguma forma. Abraço!
+
+![salutation](https://i.pinimg.com/originals/70/a8/1c/70a81cc393c45c88a5badc086de9315d.gif)
