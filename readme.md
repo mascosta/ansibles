@@ -1,8 +1,8 @@
 # Repositorio público (caso alguem precise) de alguns estudos com ansible :D
 
-### Saudações! Aqui vai alguns guias que podem ser usados ou até mesmo incrementados, de acordo com a necessidade, da galera que está entrando na área de DevOps ou até mesmo que já está mas ainda não teve o prazer de brincar com essa ferramenta show de bola, chamada Ansible.
+- Saudações! Aqui vai alguns guias que podem ser usados ou até mesmo incrementados, de acordo com a necessidade, da galera que está entrando na área de DevOps ou até mesmo que já está mas ainda não teve o prazer de brincar com essa ferramenta show de bola, chamada Ansible.
 
-### Apesar de não ser algo complexo ou avançado, segue abaixo alguns resultados de estudos com a ferramenta, desde a cópia simples da chave ssh pública para um destino "x" até o provisionamento de máquinas virtuais em um ambiente XEN like (XCP-NG)
+- Apesar de não ser algo complexo ou avançado, segue abaixo alguns resultados de estudos com a ferramenta, desde a cópia simples da chave ssh pública para um destino "x" até o provisionamento de máquinas virtuais em um ambiente XEN like (XCP-NG)
 
 ## Observação1: [+ Alguns arquivos/diretórios de dados sensíveis foram removidos via gitignore, contudo, é só adaptar a realidade do ambiente que for aplicar. +]
 
