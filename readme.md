@@ -11,7 +11,7 @@
 - .ssh/
 - roles/xen/vars/vars.yaml
 
-##[+ Observação2:  O ambiente foi montado no diretório /opt/ansible +]
+## [+ Observação2:  O ambiente foi montado no diretório /opt/ansible +]
 
 
 ## 0 - Pré-configuração padrão do ambiente (adição das chaves, porque ninguem aqui quer usar o ```--ask-pass```)
