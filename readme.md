@@ -4,14 +4,14 @@
 
 - Apesar de não ser algo complexo ou avançado, segue abaixo alguns resultados de estudos com a ferramenta, desde a cópia simples da chave ssh pública para um destino "x" até o provisionamento de máquinas virtuais em um ambiente XEN like (XCP-NG)
 
-## *** Observação1: Alguns arquivos/diretórios de dados sensíveis foram removidos via gitignore, contudo, é só adaptar a realidade do ambiente que for aplicar. +] ***
+## Observação1: Alguns arquivos/diretórios de dados sensíveis foram removidos via gitignore, contudo, é só adaptar a realidade do ambiente que for aplicar.
 
 **Alguns exemplos:**
 
 - .ssh/
 - roles/xen/vars/vars.yaml
 
-## *** Observação2:  O ambiente foi montado no diretório /opt/ansible ***
+## Observação2:  O ambiente foi montado no diretório /opt/ansible
 
 
 ## 0 - Pré-configuração padrão do ambiente (adição das chaves, porque ninguem aqui quer usar o ```--ask-pass```)
